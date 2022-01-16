@@ -1,19 +1,13 @@
-import './App.css'
 import Form from './components/Form'
+import React from 'react'
+import { FormContextProvider } from './store/form-context'
+
 function App () {
-  const questions = [
-    {
-      question: 'selam',
-      answers: ['abi', 'saka', 'bu']
-    },
-    {
-      question: 'asd',
-      answers: ['asdf', 'saaska', 'dsfa']
-    }
-  ]
   return (
     <div className='flex justify-center items-center h-screen w-screen'>
-      <Form questions={questions}></Form>
+      <FormContextProvider>
+        <Form></Form>
+      </FormContextProvider>
     </div>
   )
 }

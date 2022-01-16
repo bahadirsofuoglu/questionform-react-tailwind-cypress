@@ -1,16 +1,25 @@
-import React from 'react'
-
-function Navbar (props) {
+import React, { useContext } from 'react'
+import FormContent from './FormContent'
+import FormContext from '../store/form-context'
+function Form (props) {
+  const { questions } = useContext(FormContext)
+  console.log(questions)
   return (
     <div className='flex flex-col bg-cyan-200'>
       <div className='flex justify-end w-full'>
-        <span>3 / 5 </span>
+        <span>0 / {questions.length} </span>
       </div>
       <div>
-        <label class='inline-flex items-center'>
-          <input type='checkbox' class='w-6 h-6 rounded' checked />
-          <span class='ml-2'>Rounded checkbox</span>
-        </label>
+        {questions.map((question, index) => (
+          <FormContent
+            key={`answer-${index}`}
+            answers={question.answers}
+            selectedAnswer={(element, answer) => {
+              const questionId = index
+              props.selectedAnswer(element, answer, questionId)
+            }}
+          />
+        ))}
       </div>
       <div>
         <p>asdasdifj dsaipfjas asmdfasşodf asdf sadf asdf</p>
@@ -19,4 +28,4 @@ function Navbar (props) {
   )
 }
 
-export default Navbar
+export default Form
