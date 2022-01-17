@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import FormContext from '../store/form-context'
 
 function Checkbox (props) {
+  const { selectedAnswer } = useContext(FormContext)
   const checkboxHandler = event => {
-    props.selectedAnswer(props, event.target.checked)
+    selectedAnswer(props, event.target.checked)
   }
+
   return (
-    <div>
+    <div className='p-4'>
       <label className='inline-flex items-center'>
         <input
           type='checkbox'
           className='w-6 h-6 rounded'
-          checked={props.checked}
+          checked={props.changedAnswer.checked}
           onChange={checkboxHandler}
         />
-        <span className='ml-2'>{props.text}</span>
+        <span className='ml-2'>{props.changedAnswer.text}</span>
       </label>
     </div>
   )

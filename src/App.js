@@ -1,14 +1,13 @@
-import Form from './components/Form'
 import React from 'react'
+import Form from './components/Form'
 import { FormContextProvider } from './store/form-context'
-
 function App () {
   return (
-    <div className='flex justify-center items-center h-screen w-screen'>
-      <FormContextProvider>
+    <FormContextProvider>
+      <div className='flex justify-center items-center h-screen w-screen'>
         <Form></Form>
-      </FormContextProvider>
-    </div>
+      </div>
+    </FormContextProvider>
   )
 }
 

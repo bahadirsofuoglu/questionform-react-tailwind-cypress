@@ -1,28 +1,44 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import FormContent from './FormContent'
+import Completed from './Completed'
 import FormContext from '../store/form-context'
-function Form (props) {
+
+function Form () {
   const { questions } = useContext(FormContext)
-  console.log(questions)
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+
+  if (currentQuestion === 2) {
+    return <Completed></Completed>
+  }
   return (
-    <div className='flex flex-col bg-cyan-200'>
+    <div className='flex flex-col bg-cyan-200 p-10 w-1/2'>
       <div className='flex justify-end w-full'>
-        <span>0 / {questions.length} </span>
+        <span>
+          {currentQuestion + 1} / {questions.length}{' '}
+        </span>
       </div>
-      <div>
-        {questions.map((question, index) => (
-          <FormContent
-            key={`answer-${index}`}
-            answers={question.answers}
-            selectedAnswer={(element, answer) => {
-              const questionId = index
-              props.selectedAnswer(element, answer, questionId)
-            }}
-          />
-        ))}
+      <div className='p-4'>
+        {questions.map((question, index) => {
+          if (currentQuestion === index) {
+            return <FormContent key={`answer-${index}`} question={question} />
+          }
+
+          return ''
+        })}
       </div>
-      <div>
-        <p>asdasdifj dsaipfjas asmdfasşodf asdf sadf asdf</p>
+      <div className='p-4 flex justify-end w-full'>
+        <button
+          className='bg-slate-200 w-32'
+          onClick={() =>
+            setCurrentQuestion(
+              currentQuestion < questions.length
+                ? currentQuestion + 1
+                : currentQuestion
+            )
+          }
+        >
+          complete test
+        </button>
       </div>
     </div>
   )
