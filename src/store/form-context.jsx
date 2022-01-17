@@ -1,25 +1,38 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { items } from './items'
 
 const FormContext = createContext()
 
 export const FormContextProvider = props => {
-  const [questions, setQuestions] = useState(items)
+  const [questions, setQuestions] = useState([])
 
-  const checkedItem = () => {
-    const newTodo = {
-      id: new Date().toISOString(),
-      text: 'asdsa'
-    }
+  useEffect(() => {
+    setQuestions(items)
+  }, [])
 
-    setQuestions(prevTodos => {
-      return prevTodos.concat(newTodo)
+  const selectedAnswer = (data, checked) => {
+    const { questionId, changedAnswer } = data
+
+    const newQuestions = questions.map(question => {
+      if (question.id === questionId) {
+        question.answers.map(answer => {
+          if (answer.id === changedAnswer.id) {
+            answer.checked = checked
+          } else {
+            answer.checked = false
+          }
+          return answer
+        })
+      }
+      return question
     })
+
+    setQuestions([...newQuestions])
   }
 
   const contextValue = {
     questions: questions,
-    checkedItem: checkedItem
+    selectedAnswer: selectedAnswer
   }
 
   return (

@@ -4,14 +4,17 @@ export const items = [
     question: 'selam',
     answers: [
       {
+        id: 0,
         text: 'a',
         checked: false
       },
       {
+        id: 1,
         text: 'b',
         checked: false
       },
       {
+        id: 2,
         text: 'c',
         checked: false
       }
@@ -23,14 +26,17 @@ export const items = [
     question: 'asd',
     answers: [
       {
+        id: 0,
         text: 'd',
         checked: false
       },
       {
+        id: 1,
         text: 'e',
         checked: false
       },
       {
+        id: 2,
         text: 'f',
         checked: false
       }

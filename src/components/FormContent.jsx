@@ -1,18 +1,18 @@
 import React from 'react'
 import Checkbox from './Checkbox'
 function FormContent (props) {
-  const { answers } = props
+  const { question } = props
 
   return (
     <div>
-      {answers.map((answer, index) => (
+      <div className='p-4'>
+        <p>{question.question}</p>
+      </div>
+      {question.answers.map((answer, index) => (
         <Checkbox
           key={`answer-${index}`}
-          text={answer.text}
-          checked={answer.checked}
-          selectedAnswer={(element, answer) => {
-            props.selectedAnswer(element, answer)
-          }}
+          questionId={question.id}
+          changedAnswer={answer}
         />
       ))}
     </div>
