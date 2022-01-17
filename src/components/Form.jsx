@@ -14,7 +14,7 @@ function Form () {
     <div className='flex flex-col bg-cyan-200 p-10 w-1/2'>
       <div className='flex justify-end w-full'>
         <span>
-          {currentQuestion + 1} / {questions.length}{' '}
+          {currentQuestion + 1} / {questions.length}
         </span>
       </div>
       <div className='p-4'>
