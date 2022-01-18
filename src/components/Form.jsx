@@ -28,13 +28,13 @@ function Form () {
   }
 
   return (
-    <div className='flex flex-col bg-cyan-200 p-10 w-1/2'>
-      <div id='header' className='flex justify-end w-full'>
+    <div className='flex flex-col bg-indigo-400 b p-10 w-1/2 rounded-xl'>
+      <div id='header' className='flex justify-end w-full text-2xl text-white '>
         <span>
           {currentQuestion + 1} / {questions.length}
         </span>
       </div>
-      <div className='p-4'>
+      <div className='p-4 '>
         {questions.map((question, index) => {
           if (currentQuestion === index) {
             return <FormContent key={`answer-${index}`} question={question} />
@@ -45,7 +45,7 @@ function Form () {
       </div>
       <div className='p-4 flex justify-end w-full'>
         <button
-          className='bg-slate-200 w-32'
+          className='w-52 h-14 rounded-full text-xl border-white border-4 bg-indigo-400 text-white font-semibold'
           disabled={disabled}
           onClick={onClickButton}
         >

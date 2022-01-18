@@ -20,7 +20,7 @@ describe('My First Test', function () {
     )
   }
 
-  it('Should pass!', function () {
+  it('Visited!', function () {
     cy.visit('http://localhost:3000')
   })
 

@@ -1,21 +1,21 @@
 export const items = [
   {
     id: 0,
-    question: 'selam',
+    question: 'Lorem ipsum dolor sit amet ? ',
     answers: [
       {
         id: 0,
-        text: 'a',
+        text: 'Lorem ipsum amet',
         checked: false
       },
       {
         id: 1,
-        text: 'b',
+        text: 'Lorem ipsum amet',
         checked: false
       },
       {
         id: 2,
-        text: 'c',
+        text: 'Lorem ipsum amet',
         checked: false
       }
     ],

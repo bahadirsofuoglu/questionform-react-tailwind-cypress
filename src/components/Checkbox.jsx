@@ -8,16 +8,18 @@ function Checkbox (props) {
   }
 
   return (
-    <div className='p-4'>
+    <div className={props.changedAnswer.id === 0 ? 'p-4 mt-4' : 'p-4'}>
       <label className='inline-flex items-center'>
         <input
           name={`answer-${props.changedAnswer.id}`}
           type='checkbox'
-          className='w-6 h-6 rounded'
+          className='text-indigo-500 w-6 h-6 mr-2 focus:ring-indigo-400 focus:ring-opacity-25 border border-gray-300 rounded'
           checked={props.changedAnswer.checked}
           onChange={checkboxHandler}
         />
-        <span className='ml-2'>{props.changedAnswer.text}</span>
+        <span className='ml-2 text-white text-xl '>
+          {props.changedAnswer.text}
+        </span>
       </label>
     </div>
   )

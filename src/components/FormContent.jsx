@@ -6,7 +6,7 @@ function FormContent (props) {
   return (
     <div>
       <div className='p-4'>
-        <p>{question.question}</p>
+        <p className='text-3xl text-white font-medium'>{question.question}</p>
       </div>
       {question.answers.map((answer, index) => (
         <Checkbox
