@@ -9,6 +9,7 @@ function Completed () {
         return (
           <CompletedFormContent
             key={index}
+            currentIndex={index}
             question={question}
           ></CompletedFormContent>
         )

@@ -1,21 +1,21 @@
 export const items = [
   {
     id: 0,
-    question: 'Which is your age range? ',
+    question: 'What is your gender?',
     answers: [
       {
         id: 0,
-        text: 'Less than 15',
+        text: 'Male',
         checked: false
       },
       {
         id: 1,
-        text: 'Beetween 15 and 30',
+        text: 'Female',
         checked: false
       },
       {
         id: 2,
-        text: 'Over 30',
+        text: 'Other',
         checked: false
       }
     ],
@@ -23,7 +23,7 @@ export const items = [
   },
   {
     id: 1,
-    question: 'Which color is closest to your favourite?',
+    question: 'What is your favorite color?',
     answers: [
       {
         id: 0,
@@ -32,12 +32,12 @@ export const items = [
       },
       {
         id: 1,
-        text: 'Blue',
+        text: 'White',
         checked: false
       },
       {
         id: 2,
-        text: 'Red',
+        text: 'Other',
         checked: false
       }
     ],

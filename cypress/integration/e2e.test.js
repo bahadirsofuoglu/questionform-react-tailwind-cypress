@@ -1,4 +1,4 @@
-describe('My First Test', function () {
+describe('Form UI E2E Test', function () {
   let inputIds = [0, 1, 2]
 
   beforeEach(() => {
@@ -55,6 +55,15 @@ describe('My First Test', function () {
 
   it('after button clicked form should complete', function () {
     cy.get('button').click()
-    cy.get('h5').should('have.text', 'Test is completed')
+    cy.get(`#completed-question-${0}`).should(
+      'have.text',
+      'Question : What is your gender?'
+    )
+    cy.get(`#completed-answer-${0}`).should('have.text', 'Answer: Other')
+    cy.get(`#completed-question-${1}`).should(
+      'have.text',
+      'Question : What is your favorite color?'
+    )
+    cy.get(`#completed-answer-${1}`).should('have.text', 'Answer: Other')
   })
 })
