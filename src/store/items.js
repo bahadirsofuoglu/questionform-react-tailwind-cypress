@@ -1,21 +1,21 @@
 export const items = [
   {
     id: 0,
-    question: 'Lorem ipsum dolor sit amet ? ',
+    question: 'Which is your age range? ',
     answers: [
       {
         id: 0,
-        text: 'Lorem ipsum amet',
+        text: 'Less than 15',
         checked: false
       },
       {
         id: 1,
-        text: 'Lorem ipsum amet',
+        text: 'Beetween 15 and 30',
         checked: false
       },
       {
         id: 2,
-        text: 'Lorem ipsum amet',
+        text: 'Over 30',
         checked: false
       }
     ],
@@ -23,21 +23,21 @@ export const items = [
   },
   {
     id: 1,
-    question: 'asd',
+    question: 'Which color is closest to your favourite?',
     answers: [
       {
         id: 0,
-        text: 'd',
+        text: 'Black',
         checked: false
       },
       {
         id: 1,
-        text: 'e',
+        text: 'Blue',
         checked: false
       },
       {
         id: 2,
-        text: 'f',
+        text: 'Red',
         checked: false
       }
     ],

@@ -14,8 +14,8 @@ export const FormContextProvider = props => {
     const { questionId, changedAnswer } = data
 
     const newQuestions = questions.map(question => {
-      question.answer = changedAnswer
       if (question.id === questionId) {
+        question.answer = changedAnswer
         question.answers.map(answer => {
           if (answer.id === changedAnswer.id) {
             answer.checked = checked

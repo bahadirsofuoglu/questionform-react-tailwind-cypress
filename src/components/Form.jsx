@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import FormContent from './FormContent'
-import Completed from './Completed'
+import Completed from './CompletedForm'
 import FormContext from '../store/form-context'
 
 function Form () {
