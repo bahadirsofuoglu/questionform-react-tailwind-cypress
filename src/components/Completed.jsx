@@ -3,7 +3,7 @@ import React from 'react'
 function Completed () {
   return (
     <div>
-      <p>Test is completed</p>
+      <h5>Test is completed</h5>
     </div>
   )
 }

@@ -11,6 +11,7 @@ function Checkbox (props) {
     <div className='p-4'>
       <label className='inline-flex items-center'>
         <input
+          name={`answer-${props.changedAnswer.id}`}
           type='checkbox'
           className='w-6 h-6 rounded'
           checked={props.changedAnswer.checked}
