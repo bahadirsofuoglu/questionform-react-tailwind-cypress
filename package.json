@@ -17,7 +17,7 @@
     "cypr": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open",
     "cypress:open": "cypress open",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
